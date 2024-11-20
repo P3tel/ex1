@@ -1,45 +1,68 @@
 /******************
-Name:
-ID:
-Assignment:
+Name:Ori Bahat-Petel
+ID:331753830
+Assignment:ex1
 *******************/
 #include <stdio.h>
 
-// REMIDER : YOU CANT USE ANY CONTROL FLOW OPERATIONS OR FUNCTIONS, ONLY BITWISE.
-
-int main() {
+int main() 
+{
+    int x,y,z,n;
+    int b3,b5,b7,b11;
   
-  // What bit
-  printf("What bit:\n");
-  /*Scan two integers (representing number and a position)
-  Print the bit in this position. */
+    //ex 1
+    printf("What bit:\n");
+    printf("Please enter a number\n");
+    scanf("%d",&x); 
+    printf("Please enter a position\n");
+    scanf("%d",&y);
+    z = (x >> y) & 1;
+    printf("the bit in position %d of number %d is: %d",y,x,z );
+    printf("\n\n");
   
-  // Set bit
-  printf("\nSet bit:\n");
-  /*Scan two integers (representing number and a position)
-  Make sure the bit in this position is "on" (equal to 1)
-  Print the output
-  Now make sure it's "off" (equal to 0)
-  Print the output */
-
-  // Toggle bit
-  printf("\nToggle bit:\n");
-  /*Scan two integers (representing number and a position)
-  Toggle the bit in this position
-  Print the new number */
+    //ex 2
+    printf("Set bit:\n");
+    printf("Please enter a number\n");
+    scanf("%d",&x); 
+    printf("Please enter a position\n");
+    scanf("%d",&y);
+    z = x | (1 << y);
+    n = x & ~(1 << y);
+    printf("Number with bit %d set to 1: %d\n",y,z);
+    printf("Number with bit %d set to 0: %d",y,n);
+    printf("\n\n");
   
-  // Even - Odd
-  printf("\nEven - Odd:\n");
-  /* Scan an integer
-  If the number is even - print 1, else - print 0. */
+    //ex 3
+    printf("Toggle bit:\n");
+    printf("Please enter a number\n");
+    scanf("%d",&x); 
+    printf("Please enter a position\n");
+    scanf("%d",&y);
+    z = x ^ (1 << y);
+    printf("Number with bit %d toggled: %d",y,z);
+    printf("\n\n");
   
-  // 3, 5, 7, 11
-  printf("\n3, 5, 7, 11:\n");
-  /* Scan two integers in octal base
-  sum them up and print the result in hexadecimal base
-  Print only 4 bits, in positions: 3,5,7,11 in the result. */
-
-  printf("Bye!\n");
+    //ex 4
+    printf("Even - Odd:\n");
+    printf("Please enter a number\n");
+    scanf("%d",&x); 
+    y = (x & 1) ^ 1;
+    printf("%d",y);
+    printf("\n\n");
   
-  return 0;
+    //ex 5
+    printf("3, 5, 7, 11:\n");
+    printf("Please enter the first number (octal):\n");
+    scanf("%o",&x); 
+    printf("Please enter the second number (octal):\n");
+    scanf("%o",&y);
+    z = x + y;
+    b3 = 1 & (z >> 3);
+    b5 = 1 & (z >> 5);
+    b7 = 1 & (z >> 7);
+    b11 = 1 & (z >> 11);
+    printf("The sum in hexadecimal is: %X\n",z);
+    printf("The 3,5,7,11 bits are: %d%d%d%d",b3,b5,b7,b11);
+    printf("\nBye!");
+    return 0;
 }
