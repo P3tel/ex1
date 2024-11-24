@@ -1,6 +1,6 @@
 /******************
 Name:Ori Bahat-Petel
-ID:331753830
+ID:
 Assignment:ex1
 *******************/
 #include <stdio.h>
